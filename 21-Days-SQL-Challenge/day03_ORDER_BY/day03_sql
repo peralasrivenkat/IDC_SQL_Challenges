@@ -1,10 +1,18 @@
-SELECT
-    week,
-    service,
-    patients_refused,
-    patients_request
-FROM
-    services_weekly
-ORDER BY
-    patients_refused DESC
+-- Day 3: ORDER BY
+
+-- 1. List all patients sorted by age (descending)
+SELECT * FROM patients ORDER BY age DESC;
+
+-- 2. Show weekly services sorted by week ASC and patients_request DESC
+SELECT * FROM services_weekly
+ORDER BY week ASC, patients_request DESC;
+
+-- 3. Display staff members sorted alphabetically by service name
+SELECT * FROM services_weekly ORDER BY service ASC;
+
+-- Day 3 Challenge:
+-- Retrieve top 5 weeks with highest patient refusals
+SELECT week, service, patients_refused, patients_request
+FROM services_weekly
+ORDER BY patients_refused DESC
 LIMIT 5;
